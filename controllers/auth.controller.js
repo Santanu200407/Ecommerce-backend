@@ -35,6 +35,4 @@ exports.sighnup=async (req,res)=>{
             message:"some error happen while registering the user"
         })
     }
-
-    
 }
