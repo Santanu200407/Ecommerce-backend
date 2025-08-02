@@ -8,6 +8,7 @@ const db_config = require("./configs/db.config")
 const userModel = require("./model/user.model")
 const bcrypt=require("bcryptjs")
 const app=express()
+app.use(express.json()) //to convert json to js
 /**
  * Create an admin user at the starting of the application
  * if not already present
@@ -35,7 +36,7 @@ async function init(){
     console.log("Error while reading the data",err)
   }
     try{
-       user= await userModel.create({
+       const user= await userModel.create({
             name:"Santanu",
             userId:"admin",
             email:"santanumondal4168@gmail.com",
@@ -47,6 +48,11 @@ async function init(){
         console.log("Error while creating admin",err)
     }
 }
+/**
+ * Stich the route to server
+ */
+require("./routes/auth.routes")(app)
+
 /**
  * Start the server
  */
