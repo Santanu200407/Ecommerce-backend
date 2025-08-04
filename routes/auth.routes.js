@@ -13,5 +13,5 @@ module.exports=(app)=>{
      * route for post call for 
      * POST /ecomm/api/v1/auth/signin
      */
-    app.post("/ecomm/api/v1/auth/signin",authController.sighnin)
+    app.post("/ecomm/api/v1/auth/signin",[mw.vi],authController.sighnin)
 }
