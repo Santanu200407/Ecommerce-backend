@@ -10,6 +10,7 @@ exports.sighnup=async (req,res)=>{
      * logic to create the user
      */
     //1.Read the request body
+
     const rb=req.body //in the form of js object
     //2.Insert the data in the Users collection in MongoDB
     const userObj={
@@ -20,7 +21,7 @@ exports.sighnup=async (req,res)=>{
         password:bcrypt.hashSync(rb.password,8)
     }
     try{
-        //3.Return the response back to thee user
+        //3.Return the response back to the user
         const  user=await userModel.create(userObj)
         const response={
             name:user.name,
@@ -63,5 +64,4 @@ exports.sighnin=async (req,res)=>{
         userType:user.userType,
         acessToken:token
     })
-
 }
