@@ -9,4 +9,9 @@ const mw = require("../middlewares/auth.mw")
 
 module.exports=(app)=>{
     app.post("/ecomm/api/v1/auth/signup",[mw.vs],authController.sighnup)
+    /**
+     * route for post call for 
+     * POST /ecomm/api/v1/auth/signin
+     */
+    app.post("/ecomm/api/v1/auth/signin",authController.sighnin)
 }
