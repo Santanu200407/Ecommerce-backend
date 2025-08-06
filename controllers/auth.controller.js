@@ -58,7 +58,7 @@ exports.sighnin=async (req,res)=>{
         expiresIn:120//sec
     })
     res.status(200).send({
-        nsme:user.name,
+        name:user.name,
         userId:user.userId,
         email:user.email,
         userType:user.userType,
