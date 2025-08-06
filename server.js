@@ -1,6 +1,7 @@
 /**
  * This will be starting file of the project
  */
+require("dotenv").config(); 
 const mongoose=require("mongoose")
 const express=require("express")
 const config= require("./configs/server.config")
